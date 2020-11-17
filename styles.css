@@ -1,0 +1,17 @@
+#gallery {
+  display: flex;
+}
+.item + .item {
+  margin-left: 15px;
+}
+#validation-input {
+  border: 3px solid #bdbddb;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
