@@ -27,5 +27,5 @@ const galleryRef = document.querySelector("#gallery");
 const createGallery = ({ url, alt }) => {
   return `<li class="item"><img class="image" src="${url}" alt="${alt}" width="320" height="240"/></li>`;
 };
-const makeHTML = images.map(createGallery).join(``);
-galleryRef.insertAdjacentHTML(`beforeend`, makeHTML);
+const makeHTML = images.map(createGallery).join("");
+galleryRef.insertAdjacentHTML("beforeend", makeHTML);

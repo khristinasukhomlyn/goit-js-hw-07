@@ -14,12 +14,19 @@ const ingredients = [
   "Приправы",
 ];
 
-const items = [];
+// const items = [];
 
-ingredients.map((ingredient) => {
+// ingredients.map((ingredient) => {
+//   const item = document.createElement(`li`);
+//   item.textContent = ingredient;
+//   items.push(item);
+// });
+
+// ingredientsRef.append(...items);
+
+const items = ingredients.map((ingredient) => {
   const item = document.createElement(`li`);
   item.textContent = ingredient;
-  items.push(item);
+  item.textContent = ingredient;
+  return item;
 });
-
-ingredientsRef.append(...items);

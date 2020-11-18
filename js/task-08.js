@@ -9,28 +9,36 @@
 // Каждый следующий div после первого, должен быть шире и выше предыдущего на 10px
 // Создай функцию destroyBoxes(), которая очищает div#boxes.
 
-// let render=document.getElementById('controls').childNodes[3];
-// let destroy=document.getElementById('controls').childNodes[5];
+const render = document.querySelector('buttondata[data - action= "render"]');
+const destroy = document.querySelector('button[data - action= "destroy"]');
+const input = document.querySelector("#controls > input");
+const boxes = document.querySelector("#boxes");
 
-// render.addEventListener('click',createBoxes);
-// function createBoxes(){
-//     let boxes=document.getElementById('boxes');
-//     let numb=Number(document.getElementById('controls').childNodes[1].value);
-//     let totalDiv=boxes.querySelectorAll('div').length;
-//     createDiv(boxes,numb,totalDiv);
-// };
-// destroy.addEventListener('click',destroyBoxes);
+let dives = [];
 
-// function destroyBoxes(){
-//     let boxes=document.getElementById('boxes');
-//     boxes.innerHTML='';
-// };
-// function createDiv(id,numb,b=0){
-//     for(let i=1;i<numb+1;i+=1){
-//         let div=document.createElement('div');
-//         div.style.width=(i+b)10+"px";
-//         div.style.height=(i+b)10+"px";
-//         div.style.backgroundColor='#' + ( Math.random() * 0xFFFFF0 << 0 ).toString(16);
-//         id.append(div);
-//     }
-// }
+function createDives(amount) {
+  let size = 30;
+
+  for (let i = 0; i < amount; i++) {
+    size += 10;
+    let createDiv = document.createElement("div");
+    createDiv.style.width = `${size}px`;
+    createDiv.style.height = `${size}px`;
+    createDiv.style.backgroundColor =
+      "#" + ((Math.random() * 0xfffff0) << 0).toString(16);
+    dives.push(createDiv);
+  }
+  boxes.append(...dives);
+}
+
+render.addEventListener("click", createBoxes);
+
+function createBoxes() {
+  let value = Number(input.value);
+  createDives(value);
+}
+function destroyBoxes() {
+  boxes.innerHTML = "";
+  input.value = "";
+}
+destroy.addEventListener("click", destroyBoxes);
