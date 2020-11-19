@@ -3,10 +3,10 @@
 //         стиль span#text обновляя свойство font - size.
 // В результате при перетаскивании ползунка будет меняться размер текста.
 
-const input = document.querySelector("#font-size-conrtrol");
+const input = document.querySelector("#font-size-control");
 const text = document.querySelector("#text");
 input.addEventListener("input", () => {
-  text.style.fontsize = input.value + "px";
+  text.style.fontSize = input.value + "px";
 });
 
 // let fontSizeControl = document.getElementById('font-size-control');

@@ -22,11 +22,10 @@ const ingredients = [
 //   items.push(item);
 // });
 
-// ingredientsRef.append(...items);
-
 const items = ingredients.map((ingredient) => {
   const item = document.createElement(`li`);
   item.textContent = ingredient;
   item.textContent = ingredient;
   return item;
 });
+ingredientsRef.append(...items);
