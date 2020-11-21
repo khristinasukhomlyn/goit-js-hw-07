@@ -40,5 +40,6 @@ function createBoxes() {
 function destroyBoxes() {
   boxes.innerHTML = "";
   input.value = "";
+  dives = [];
 }
 destroy.addEventListener("click", destroyBoxes);

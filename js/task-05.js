@@ -9,5 +9,7 @@ console.log("output", output);
 
 input.addEventListener("input", onInputChange);
 
-output.textContent =
-  input.value === "" ? "незнакомец" : event.currentTarget.value;
+function onInputChange(event) {
+  output.textContent =
+    input.value === "" ? "незнакомец" : event.currentTarget.value;
+}
